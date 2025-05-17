@@ -1,0 +1,175 @@
+[
+  {
+    "id": 1742160333362,
+    "userId": "321",
+    "eventId": 1742159917818,
+    "amount": 200,
+    "type": "win1",
+    "coefficient": 1.5,
+    "potential_win": 300,
+    "status": "win",
+    "datetime": "2025-03-16T21:25:33.362Z"
+  },
+  {
+    "id": 1742160506573,
+    "userId": "123",
+    "eventId": 1742160495308,
+    "amount": 222,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 444,
+    "status": "win",
+    "datetime": "2025-03-16T21:28:26.573Z"
+  },
+  {
+    "id": 1742160781209,
+    "userId": "123",
+    "eventId": 1742160495308,
+    "amount": 200,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 400,
+    "status": "win",
+    "datetime": "2025-03-16T21:33:01.209Z"
+  },
+  {
+    "id": 1742160909056,
+    "userId": "йцу",
+    "eventId": 1742160891400,
+    "amount": 222,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 444,
+    "status": "win",
+    "datetime": "2025-03-16T21:35:09.056Z"
+  },
+  {
+    "id": 1742161286295,
+    "userId": "123",
+    "eventId": 1742161277172,
+    "amount": 78,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 156,
+    "status": "lose",
+    "datetime": "2025-03-16T21:41:26.295Z"
+  },
+  {
+    "id": 1742161596794,
+    "userId": "123",
+    "eventId": 1742161586617,
+    "amount": 100,
+    "type": "win1",
+    "coefficient": 1.5,
+    "potential_win": 150,
+    "status": "win",
+    "datetime": "2025-03-16T21:46:36.794Z"
+  },
+  {
+    "id": 1742161717076,
+    "userId": "йцу",
+    "eventId": 1742161698079,
+    "amount": 278,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 556,
+    "status": "active",
+    "datetime": "2025-03-16T21:48:37.076Z"
+  },
+  {
+    "id": 1742162010635,
+    "userId": "123",
+    "eventId": 1742162003002,
+    "amount": 100,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 200,
+    "status": "win",
+    "datetime": "2025-03-16T21:53:30.635Z"
+  },
+  {
+    "id": 1742162028368,
+    "userId": "321",
+    "eventId": 1742162003002,
+    "amount": 300,
+    "type": "win1",
+    "coefficient": 2,
+    "potential_win": 600,
+    "status": "win",
+    "datetime": "2025-03-16T21:53:48.368Z"
+  },
+  {
+    "id": 1742162537682,
+    "userId": "123",
+    "eventId": 1742162522993,
+    "amount": 100,
+    "type": "win1",
+    "coefficient": 1.6,
+    "potential_win": 160,
+    "status": "win",
+    "datetime": "2025-03-16T22:02:17.682Z"
+  },
+  {
+    "id": 1742162550434,
+    "userId": "йцу",
+    "eventId": 1742162522993,
+    "amount": 200,
+    "type": "win1",
+    "coefficient": 1.6,
+    "potential_win": 320,
+    "status": "win",
+    "datetime": "2025-03-16T22:02:30.434Z"
+  },
+  {
+    "id": 1742295556004,
+    "userId": "йцу",
+    "eventId": 1742294098635,
+    "amount": 64,
+    "type": "win1",
+    "coefficient": 2.3,
+    "potential_win": 147.2,
+    "status": "lose",
+    "datetime": "2025-03-18T10:59:16.004Z"
+  },
+  {
+    "id": 1742312842343,
+    "userId": "123",
+    "eventId": 1742293993818,
+    "amount": 54,
+    "type": "win1",
+    "coefficient": 1.83,
+    "potential_win": 98.82000000000001,
+    "status": "active",
+    "datetime": "2025-03-18T15:47:22.343Z"
+  },
+  {
+    "userId": 6,
+    "eventId": 1742293993818,
+    "amount": 666,
+    "type": "draw",
+    "coefficient": 3.7,
+    "potential_win": 2464.2000000000003,
+    "status": "active",
+    "datetime": "2025-04-09 12:17:09"
+  },
+  {
+    "userId": 7,
+    "eventId": 1742293993818,
+    "amount": 652,
+    "type": "draw",
+    "coefficient": 3.7,
+    "potential_win": 2412.4,
+    "status": "active",
+    "datetime": "2025-04-19 08:50:39"
+  },
+  {
+    "userId": 8,
+    "eventId": 1742293993818,
+    "amount": 333,
+    "type": "draw",
+    "coefficient": 3.7,
+    "potential_win": 1232.1000000000001,
+    "status": "active",
+    "datetime": "2025-04-19 09:03:23"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1742293993818,
+    "sport": "football",
+    "name": "Лига чепионов",
+    "datetime": "2025-03-19T16:00",
+    "team1": "Спартак",
+    "team2": "Печинен",
+    "coefficients": {
+      "win1": 1.83,
+      "draw": 3.7,
+      "win2": 1.85
+    },
+    "status": "active"
+  },
+  {
+    "id": 1742294098635,
+    "sport": "cybersport",
+    "name": "Интернешинал ",
+    "datetime": "2025-03-18T17:00",
+    "team1": "Спирит",
+    "team2": "Тундра",
+    "coefficients": {
+      "win1": 2.3,
+      "draw": 6,
+      "win2": 2.3
+    },
+    "status": "completed",
+    "result": "win1"
+  },
+  {
+    "id": 1742294299333,
+    "sport": "basketball",
+    "name": "НБА",
+    "datetime": "2025-04-20T05:00",
+    "team1": "Бруклин",
+    "team2": "Вашингтон ",
+    "coefficients": {
+      "win1": 1.45,
+      "win2": 3.23
+    },
+    "status": "active"
+  },
+  {
+    "id": 1742363985344,
+    "sport": "hockey",
+    "name": "кхл",
+    "datetime": "2025-03-19T14:00",
+    "team1": "Спартак",
+    "team2": "Трактор",
+    "coefficients": {
+      "win1": 1.67,
+      "win2": 2.6,
+      "draw": 3.21
+    },
+    "status": "active"
+  },
+  {
+    "id": 1742364075668,
+    "sport": "hockey",
+    "name": "Клх",
+    "datetime": "2025-03-20T04:00",
+    "team1": "Динамо М",
+    "team2": "Металлург",
+    "coefficients": {
+      "win1": 2.1,
+      "win2": 1.87,
+      "draw": 4.2
+    },
+    "status": "completed",
+    "result": "win2"
+  }
+]

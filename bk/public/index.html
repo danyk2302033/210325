@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>DodepBet</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DodepBet</a></h1>
+      <nav class="center-nav">
+        <a href="#line">Линия</a>
+        <a href="#live">Live матчи</a>
+        <a href="#esports">Киберспорт</a>
+        <a href="results.html">Результаты</a>
+      </nav>
+      <nav class="right-nav">
+        <span id="user-balance" style="display: none">Баланс: 0 ₽</span>
+        <div class="dropdown" id="profile-dropdown" style="display: none">
+          <button>Профиль</button>
+          <div class="dropdown-content">
+            <a href="#history">История пари</a>
+            <a href="#operations">История операций</a>
+            <a href="#deposit">Пополнение и вывод</a>
+            <a href="#support">Служба поддержки</a>
+            <a href="#logout" id="logout">Выход</a>
+          </div>
+        </div>
+        <button id="admin-panel-btn" style="display: none">Админ панель</button>
+        <button id="theme-toggle">Темная тема</button>
+        <button id="login-btn">Вход</button>
+        <button id="register-btn">Регистрация</button>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <aside class="sidebar">
+        <div class="search-box">
+          <input type="text" id="event-search" placeholder="Поиск событий" />
+        </div>
+
+        <div class="quick-buttons">
+          <button class="sidebar-btn active">
+            <span class="icon">⭐</span>
+            Ближайшие
+          </button>
+          <button class="sidebar-btn">
+            <span class="icon">❤️</span>
+            Избранное
+          </button>
+        </div>
+
+        <nav class="sports-nav">
+          <ul>
+            <li>
+              <a href="#football" data-sport="football">
+                <span class="icon">⚽</span>
+                Футбол
+              </a>
+            </li>
+            <li>
+              <a href="#basketball" data-sport="basketball">
+                <span class="icon">🏀</span>
+                Баскетбол
+              </a>
+            </li>
+            <li>
+              <a href="#tennis" data-sport="tennis">
+                <span class="icon">🎾</span>
+                Теннис
+              </a>
+            </li>
+            <li>
+              <a href="#hockey" data-sport="hockey">
+                <span class="icon">🏒</span>
+                Хоккей
+              </a>
+            </li>
+            <li>
+              <a href="#cybersport" data-sport="cybersport">
+                <span class="icon">🎮</span>
+                Киберспорт
+              </a>
+            </li>
+            <li>
+              <a href="#mma" data-sport="mma">
+                <span class="icon">🥊</span>
+                MMA
+              </a>
+            </li>
+            <li>
+              <a href="#boxing" data-sport="boxing">
+                <span class="icon">🥊</span>
+                Бокс
+              </a>
+            </li>
+            <li>
+              <a href="#biathlon" data-sport="biathlon">
+                <span class="icon">🎿</span>
+                Биатлон
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="container">
+        <div id="events-container">
+          <!-- События будут добавляться здесь динамически -->
+        </div>
+      </main>
+    </div>
+
+    <!-- Модальное окно для входа -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <h2>Вход в систему</h2>
+        <form id="login-form">
+          <input type="text" id="loginUsername" placeholder="Логин" required />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Пароль"
+            required
+          />
+          <button type="submit" id="login-submit">Войти</button>
+          <button type="button" id="login-close">Закрыть</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для регистрации -->
+    <div id="register-modal" class="modal">
+      <div class="modal-content">
+        <h2>Регистрация</h2>
+        <form id="register-form">
+          <input
+            type="text"
+            id="registerUsername"
+            placeholder="Логин"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Пароль"
+            required
+          />
+          <button type="submit" id="register-submit">Зарегистрироваться</button>
+          <button type="button" id="register-close">Закрыть</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно админ-панели -->
+    <div id="admin-modal" class="modal">
+      <div class="modal-content admin-content">
+        <h2>Админ панель</h2>
+        <form id="admin-form">
+          <select id="eventSport" required>
+            <option value="">Выберите вид спорта</option>
+            <option value="football">Футбол</option>
+            <option value="basketball">Баскетбол</option>
+            <option value="tennis">Теннис</option>
+            <option value="hockey">Хоккей</option>
+            <option value="cybersport">Киберспорт</option>
+            <option value="mma">MMA</option>
+            <option value="boxing">Бокс</option>
+            <option value="biathlon">Биатлон</option>
+          </select>
+          <input
+            type="text"
+            id="eventName"
+            placeholder="Название события"
+            required
+          />
+          <input type="datetime-local" id="eventDateTime" required />
+          <div class="teams-container">
+            <input type="text" id="team1" placeholder="Команда 1" required />
+            <input type="text" id="team2" placeholder="Команда 2" required />
+          </div>
+          <div class="draw-toggle">
+            <label>
+              <input type="checkbox" id="hasDraw" checked />
+              Включить исход "Ничья"
+            </label>
+          </div>
+          <div class="coefficients-container">
+            <input
+              type="number"
+              id="coef1"
+              placeholder="Коэф. П1"
+              step="0.01"
+              min="1"
+              required
+            />
+            <input
+              type="number"
+              id="coefX"
+              placeholder="Коэф. X"
+              step="0.01"
+              min="1"
+            />
+            <input
+              type="number"
+              id="coef2"
+              placeholder="Коэф. П2"
+              step="0.01"
+              min="1"
+              required
+            />
+          </div>
+          <button type="submit">Добавить событие</button>
+          <button type="button" id="admin-close">Закрыть</button>
+        </form>
+        <div class="admin-events-list">
+          <h3>Текущие события</h3>
+          <div id="admin-events-container">
+            <!-- Список событий для управления -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно для ставки -->
+    <div id="bet-modal" class="modal">
+      <div class="modal-content">
+        <h2>Сделать ставку</h2>
+        <form id="bet-form">
+          <div id="bet-info"></div>
+          <input
+            type="number"
+            id="bet-amount"
+            placeholder="Сумма ставки"
+            min="1"
+            required
+          />
+          <button type="submit">Подтвердить ставку</button>
+          <button type="button" id="bet-close">Закрыть</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Модальное окно для истории ставок -->
+    <div id="bets-history-modal" class="modal">
+      <div class="modal-content">
+        <h2>История ставок</h2>
+        <div id="bets-history-container">
+          <!-- Здесь будет список ставок -->
+        </div>
+        <button id="bets-history-close">Закрыть</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

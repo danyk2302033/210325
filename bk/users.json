@@ -1,0 +1,50 @@
+[
+  {
+    "username": "123",
+    "password": "$2b$10$bthEObVvqbgyUNGACyb5ReX7PVBaoXlrH1oX9PPdC/GkZMBt8E6Hu",
+    "balance": 1500,
+    "isAdmin": true
+  },
+  {
+    "username": "йцу",
+    "password": "$2b$10$Hq.BFdNY8A.C7W8hdXcTYeZCCoV3tLS/6hD2jO/dnJ/AJeu6Y3acW",
+    "balance": 1000,
+    "isAdmin": false
+  },
+  {
+    "username": "321",
+    "password": "$2b$10$2TPega9k6CuMVtPhejaxxubLBoac2ZWZpwboEdeB.mwTFI/mfaW0i",
+    "balance": 1400,
+    "isAdmin": false
+  },
+  {
+    "username": "фыв",
+    "password": "$2a$10$OD.kAdw9z.PHpYSnBSirXeQM8vadnYflCEXj3JktMLtLOyr5n7UmW",
+    "balance": 1000,
+    "isAdmin": false
+  },
+  {
+    "username": "sd",
+    "password": "$2a$10$QEbkOWy85nXwYFZp6h0W7.zweSvwFJycn.z0FqdTV3eGBZZLDG5ya",
+    "balance": 1000,
+    "isAdmin": false
+  },
+  {
+    "username": "newkid",
+    "password": "$2a$10$tK9UKz2QvKJhtLoqchqixO6jVyDMgicrZ0hFPwL4DzY36DY.FbLE6",
+    "balance": 1000,
+    "isAdmin": false
+  },
+  {
+    "username": "coul",
+    "password": "$2a$10$NIiT44XlW1REGlzabHlq9.ab0j2lBfJN3.5D2m1LbgDmWhXfh/OT2",
+    "balance": 1000,
+    "isAdmin": false
+  },
+  {
+    "username": "new",
+    "password": "$2a$10$pVzpYORSI8GDQwOA/YjJbu5CcI67rZp3pO8DODdFkKFShmFsksTFm",
+    "balance": 1000,
+    "isAdmin": false
+  }
+]

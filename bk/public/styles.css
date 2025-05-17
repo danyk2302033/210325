@@ -1,0 +1,854 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-theme {
+  background-color: #333;
+  color: #f4f4f4;
+}
+header {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  margin-right: 40px; /* Отступ между логотипом и вкладками */
+}
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  gap: 20px; /* Отступ между вкладками */
+}
+nav.center-nav {
+  justify-content: center;
+  flex-grow: 1; /* Растягиваем на всё доступное пространство */
+}
+nav.right-nav {
+  margin-left: auto; /* Выравниваем вправо */
+}
+nav a,
+nav button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+nav button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #00509e;
+}
+.main-content {
+  display: flex;
+  min-height: calc(100vh - 60px); /* Вычитаем высоту хедера */
+  background-color: #f5f5f5;
+}
+.dark-theme .main-content {
+  background-color: #222;
+}
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.dark-theme .sidebar {
+  background-color: #333;
+  border-right-color: #444;
+}
+.sidebar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00509e;
+  color: white;
+  cursor: pointer;
+}
+.sidebar button:hover {
+  background-color: #004080;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+.sidebar ul li a {
+  color: #004080;
+  text-decoration: none;
+}
+.sidebar.dark-theme ul li a {
+  color: #f4f4f4;
+}
+.container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.event {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.dark-theme .event {
+  background-color: #444;
+  border-color: #555;
+  color: #f4f4f4;
+}
+.event h3 {
+  margin-top: 0;
+}
+.odds {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.odds span {
+  background-color: #004080;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+.dark-theme .modal-content {
+  background-color: #444;
+  color: #f4f4f4;
+}
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #004080;
+}
+.dark-theme .modal h2 {
+  color: #f4f4f4;
+}
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.dark-theme .modal input {
+  background-color: #333;
+  border-color: #555;
+  color: #f4f4f4;
+}
+.modal button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #004080;
+  color: white;
+  cursor: pointer;
+}
+.modal button:hover {
+  background-color: #003366;
+}
+.modal button:last-child {
+  margin-bottom: 0;
+}
+/* Поиск */
+.search-box {
+  margin-bottom: 20px;
+}
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.dark-theme .search-box input {
+  background-color: #444;
+  border-color: #555;
+  color: #fff;
+}
+/* Быстрые кнопки */
+.quick-buttons {
+  margin-bottom: 20px;
+}
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+.dark-theme .sidebar-btn {
+  background-color: #444;
+  color: #fff;
+}
+.sidebar-btn:hover {
+  background-color: #e0e0e0;
+}
+.dark-theme .sidebar-btn:hover {
+  background-color: #555;
+}
+.sidebar-btn.active {
+  background-color: #004080;
+  color: white;
+}
+.dark-theme .sidebar-btn.active {
+  background-color: #005db0;
+}
+/* Иконки */
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+/* Навигация по видам спорта */
+.sports-nav {
+  margin-top: 20px;
+}
+.sports-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sports-nav li {
+  margin-bottom: 5px;
+}
+.sports-nav a {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.dark-theme .sports-nav a {
+  color: #fff;
+}
+.sports-nav a:hover {
+  background-color: #f0f0f0;
+}
+.dark-theme .sports-nav a:hover {
+  background-color: #444;
+}
+
+/* Стили для событий */
+.event-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.dark-theme .event-card {
+  background-color: #444;
+  color: #fff;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.event-sport {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.dark-theme .event-sport {
+  color: #ccc;
+}
+
+.event-sport .icon {
+  margin-right: 5px;
+}
+
+.event-date {
+  color: #666;
+  font-size: 14px;
+}
+
+.dark-theme .event-date {
+  color: #ccc;
+}
+
+.event-teams {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.event-coefficients {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.coefficient-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark-theme .coefficient-btn {
+  background-color: #555;
+  color: #fff;
+}
+
+.coefficient-btn:hover {
+  background-color: #004080;
+  color: white;
+}
+
+.coefficient-label {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.coefficient-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Админ панель */
+.admin-content {
+  max-width: 600px;
+  width: 90%;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.teams-container,
+.coefficients-container {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.draw-toggle {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.draw-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.draw-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.teams-container input,
+.coefficients-container input {
+  flex: 1;
+}
+
+.admin-events-list {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.admin-events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dark-theme .admin-events-header {
+  border-bottom-color: #555;
+}
+
+.admin-events-header h3 {
+  margin: 0;
+}
+
+.danger-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.danger-btn:hover {
+  background-color: #c82333;
+}
+
+.admin-event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dark-theme .admin-event-item {
+  border-bottom-color: #555;
+}
+
+.admin-event-info {
+  flex: 1;
+}
+
+.admin-event-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Модальное окно для ставок */
+#bet-info {
+  margin-bottom: 15px;
+}
+
+#bet-amount {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.dark-theme #bet-amount {
+  background-color: #333;
+  border-color: #555;
+  color: #fff;
+}
+
+/* Дополнительные стили для форм */
+select,
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.dark-theme select,
+.dark-theme input[type="datetime-local"] {
+  background-color: #333;
+  border-color: #555;
+  color: #fff;
+}
+
+/* Стили для истории ставок */
+.bet-history-item {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid #004080;
+}
+
+.dark-theme .bet-history-item {
+  background-color: #333;
+  border-left-color: #005db0;
+}
+
+.bet-history-item.win {
+  border-left-color: #28a745;
+}
+
+.bet-history-item.lose {
+  border-left-color: #dc3545;
+}
+
+.bet-history-item.cancelled {
+  border-left-color: #ffc107;
+}
+
+.bet-history-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.dark-theme .bet-history-header {
+  color: #ccc;
+}
+
+.bet-history-event {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bet-history-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.bet-history-amount {
+  font-weight: bold;
+}
+
+.bet-history-status {
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.bet-history-status.active {
+  background-color: #004080;
+  color: white;
+}
+
+.bet-history-status.win {
+  background-color: #28a745;
+  color: white;
+}
+
+.bet-history-status.lose {
+  background-color: #dc3545;
+  color: white;
+}
+
+.bet-history-status.cancelled {
+  background-color: #ffc107;
+  color: black;
+}
+
+#bets-history-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+/* Стили для страницы результатов */
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.result-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+}
+
+.dark-theme .result-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.dark-theme .result-header {
+  border-bottom-color: #444;
+}
+
+.result-sport {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.result-sport .icon {
+  font-size: 1.2em;
+}
+
+.result-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.dark-theme .result-date {
+  color: #aaa;
+}
+
+.result-teams {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.result-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-coefficients {
+  display: flex;
+  gap: 10px;
+}
+
+.coefficient {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  font-size: 0.9em;
+}
+
+.dark-theme .coefficient {
+  background: #3d3d3d;
+}
+
+.coefficient.active {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.dark-theme .coefficient.active {
+  background: #1a237e;
+  color: #64b5f6;
+}
+
+.result-status {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.result-status.win1 {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.result-status.win2 {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.result-status.draw {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.dark-theme .result-status.win1,
+.dark-theme .result-status.win2 {
+  background: #1b5e20;
+  color: #81c784;
+}
+
+.dark-theme .result-status.draw {
+  background: #e65100;
+  color: #ffb74d;
+}
+
+/* Стили для сайдбара результатов */
+.results-sidebar {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.dark-theme .results-sidebar {
+  background: #2d2d2d;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.dark-theme .search-box input {
+  background: #3d3d3d;
+  border-color: #444;
+  color: #fff;
+}
+
+.quick-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.sidebar-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dark-theme .sidebar-btn {
+  background: #3d3d3d;
+  border-color: #444;
+  color: #fff;
+}
+
+.sidebar-btn:hover {
+  background: #f5f5f5;
+}
+
+.dark-theme .sidebar-btn:hover {
+  background: #4d4d4d;
+}
+
+.sidebar-btn.active {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+
+.sports-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sports-nav a {
+  color: #1976d2;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.dark-theme .sports-nav a {
+  color: #64b5f6;
+}
+
+.sports-nav a:hover {
+  background: #f5f5f5;
+}
+
+.dark-theme .sports-nav a:hover {
+  background: #3d3d3d;
+}

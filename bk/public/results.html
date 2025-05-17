@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Результаты - DodepBet</title>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">DodepBet</a></h1>
+        <nav class="center-nav">
+            <a href="index.html">Линия</a>
+            <a href="live.html">Live матчи</a>
+            <a href="esports.html">Киберспорт</a>
+            <a href="results.html" class="active">Результаты</a>
+        </nav>
+        <nav class="right-nav">
+            <span id="user-balance" style="display: none;">Баланс: 0 ₽</span>
+            <div class="dropdown" id="profile-dropdown" style="display: none;">
+                <button>Профиль</button>
+                <div class="dropdown-content">
+                    <a href="#history">История пари</a>
+                    <a href="#operations">История операций</a>
+                    <a href="#deposit">Пополнение и вывод</a>
+                    <a href="#support">Служба поддержки</a>
+                    <a href="#logout" id="logout">Выход</a>
+                </div>
+            </div>
+            <button id="admin-panel-btn" style="display: none;">Админ панель</button>
+            <button id="theme-toggle">Темная тема</button>
+            <button id="login-btn">Вход</button>
+            <button id="register-btn">Регистрация</button>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <div class="search-box">
+                <input type="text" id="results-search" placeholder="Поиск результатов">
+            </div>
+            
+            <div class="quick-buttons">
+                <button class="sidebar-btn active" data-period="today">Сегодня</button>
+                <button class="sidebar-btn" data-period="week">За неделю</button>
+                <button class="sidebar-btn" data-period="month">За месяц</button>
+            </div>
+
+            <nav class="sports-nav">
+                <ul>
+                    <li>
+                        <a href="#football" data-sport="football">
+                            <span class="icon">⚽</span>
+                            Футбол
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#basketball" data-sport="basketball">
+                            <span class="icon">🏀</span>
+                            Баскетбол
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tennis" data-sport="tennis">
+                            <span class="icon">🎾</span>
+                            Теннис
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#hockey" data-sport="hockey">
+                            <span class="icon">🏒</span>
+                            Хоккей
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cybersport" data-sport="cybersport">
+                            <span class="icon">🎮</span>
+                            Киберспорт
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#mma" data-sport="mma">
+                            <span class="icon">🥊</span>
+                            MMA
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#boxing" data-sport="boxing">
+                            <span class="icon">🥊</span>
+                            Бокс
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#biathlon" data-sport="biathlon">
+                            <span class="icon">🎿</span>
+                            Биатлон
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="container">
+            <div id="results-container" class="results-container">
+                <!-- Результаты будут добавляться здесь динамически -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальные окна для входа и регистрации -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Вход в систему</h2>
+            <form id="login-form">
+                <input type="text" id="loginUsername" placeholder="Логин" required>
+                <input type="password" id="loginPassword" placeholder="Пароль" required>
+                <button type="submit" id="login-submit">Войти</button>
+                <button type="button" id="login-close">Закрыть</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <input type="text" id="registerUsername" placeholder="Логин" required>
+                <input type="password" id="registerPassword" placeholder="Пароль" required>
+                <button type="submit" id="register-submit">Зарегистрироваться</button>
+                <button type="button" id="register-close">Закрыть</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="results.js"></script>
+</body>
+</html> 
